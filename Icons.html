@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--
+      Icons.html
+      - Contains the semantic markup for the fisheye "dock" navigation.
+      - Each `.menu-item` is an object containing an `.icon` and a `.label`.
+      - `data-detail` holds the full heuristic text used by CSS `::after` for progressive disclosure.
+    -->
     <nav class="dock-container">
+        <!-- Each menu-item represents one usability heuristic. -->
         <div class="menu-item" data-detail="System Status">
             <div class="icon">🔍</div>
             <span class="label">UH#1</span>
@@ -49,6 +56,7 @@
             <span class="label">UH#10</span>
         </div>
     </nav>
-    <script src="script.js"></script>
+    <!-- Load the actual interactivity script present in this project -->
+    <script src="test.js"></script>
 </body>
 </html>

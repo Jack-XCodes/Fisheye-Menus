@@ -9,6 +9,12 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/*
+    Overview:
+    - Provides visual layout, the fisheye magnification effect, and progressive disclosure.
+    - Uses transforms and opacity for GPU-accelerated animations.
+*/
+
 /* Dark Pill-Shaped Container */
 .dock-container {
     display: flex;
@@ -29,6 +35,8 @@ body {
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
 }
+
+/* Each .menu-item is an object: icon (visual) + label (text). Transforms are applied to the container so children animate smoothly. */
 
 /* Circular Icon Object */
 .icon {
@@ -84,3 +92,8 @@ body {
 .menu-item:hover::after {
     opacity: 1; /* Shows details during "larger" state  */
 }
+
+/* Accessibility and performance notes:
+   - Using `transform` avoids layout thrashing and leverages GPU compositing.
+   - `pointer-events: none` ensures the overlay doesn't block hover interactions.
+*/
